@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# < (c) @xditya , https://xditya.me >
 # ADsBot, 2021.
 
 # Paid source, re-distributing without contacting the code owner is NOT allowed.
@@ -58,7 +57,7 @@ commands = """
 
 @client.on(events.NewMessage(incoming=True, from_users=OWNERS, pattern="^.alive$"))
 async def alive(e):
-    await e.reply("I'm alive!\nbot by @smitmorexd.")
+    await e.reply("I'm alive!\nbot by @TONY_095.")
 
 
 @client.on(events.NewMessage(incoming=True, from_users=OWNERS, pattern="^.help$"))
@@ -133,7 +132,7 @@ async def send_the_ads():
     try:
         loaded_ads = json.loads(open("data.json").read())
     except json.decoder.JSONDecodeError:
-        log.error("Error in the data.json file. Contact @smitmorexd.")
+        log.error("Error in the data.json file. Contact @TONY_095.")
         log.warning("Stopped the bot.")
         sys.exit(1)
     chats = await load_chats()
@@ -156,5 +155,5 @@ scheduler.add_job(send_the_ads, "interval", seconds=INTERVAL)
 scheduler.start()
 
 client.loop.run_until_complete(me())
-print("Bot has started!\n(c) @smitmorexd\n")
+print("Bot has started!\n(c) @TONY_095\n")
 client.run_until_disconnected()
